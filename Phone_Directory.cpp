@@ -3,7 +3,7 @@
 using namespace std;
 
 
-int exists(string d);                    //To check whether the contact exists or not
+int exists(string s);                    //To check whether the contact exists or not
 void updatename(string s);               //To update name of contact.
 void updatecontact(string s);            //To update phone number of contact.
 void updateemail(string s);              //To update email of contact.
@@ -29,7 +29,7 @@ struct details
 
 void updatename(string s)
 {
-    int flag=0,len,i;
+    int flag=0,len,i,c;
     struct details t;
     len=s.length();
     char r[len+1];
@@ -57,7 +57,6 @@ void updatename(string s)
     getline(file,t.email);
     getline(file,t.dob);
     getline(file,t.title);
-    int c;
     while(!file.eof())
     {
        if(y!=s)
@@ -162,7 +161,6 @@ void updatecontact(string s)
     getline(file,t.email);
     getline(file,t.dob);
     getline(file,t.title);
-    int c;
     while(!file.eof())
     {
        if(y!=s)
@@ -235,7 +233,6 @@ void updatetitle(string s)
     getline(file,t.email);
     getline(file,t.dob);
     getline(file,t.title);
-    int c;
     while(!file.eof())
     {
        if(y!=s)
@@ -308,7 +305,6 @@ void updateemail(string s)
     getline(file,t.email);
     getline(file,t.dob);
     getline(file,t.title);
-    int c;
     while(!file.eof())
     {
        if(y!=s)
@@ -381,7 +377,6 @@ void updatedob(string s)
     getline(file,t.email);
     getline(file,t.dob);
     getline(file,t.title);
-    int c;
     while(!file.eof())
     {
        if(y!=s)
@@ -563,12 +558,20 @@ void update()
 /**************************************************************************************************************************************************/
 
 
-int exists(string n)
+int exists(string s)
 {
     struct details t;
     string extra,y;
-    fstream file;
     int len,i;
+    len=s.length();
+    char r[len+1];
+    for(i=0;i<len;i++)
+    {
+        r[i]=toupper(s[i]);
+    }
+    r[i]='\0';
+    s=r;
+    fstream file;
     file.open("Contact_list.txt",ios::in | ios::out |ios::app);
     getline(file,t.name);
     len=(t.name).length();
@@ -585,7 +588,7 @@ int exists(string n)
     getline(file,t.title);
     while(!file.eof())
     {
-       if(y!=n)
+       if(y!=s)
        {
 
        }
