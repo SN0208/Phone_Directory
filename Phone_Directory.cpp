@@ -65,7 +65,7 @@ void updatename(string s)
            file2<<t.phone_no<<endl;
            file2<<t.email<<endl;
            file2<<t.dob<<endl;
-           file2<<t.title<<endl;
+           file2<<t.title<<endl<<endl;
        }
        else
        {
@@ -107,8 +107,9 @@ void updatename(string s)
             file2<<t.phone_no<<endl;
             file2<<t.email<<endl;
             file2<<t.dob<<endl;
-            file2<<t.title<<endl;
+            file2<<t.title<<endl<<endl;
         }
+        getline(file,extra);
         getline(file,t.name);
         len=(t.name).length();
         char d[len+1];
@@ -169,7 +170,7 @@ void updatecontact(string s)
            file2<<t.phone_no<<endl;
            file2<<t.email<<endl;
            file2<<t.dob<<endl;
-           file2<<t.title<<endl;
+           file2<<t.title<<endl<<endl;
        }
        else
        {
@@ -179,8 +180,9 @@ void updatecontact(string s)
            file2<<t.phone_no<<endl;
            file2<<t.email<<endl;
            file2<<t.dob<<endl;
-           file2<<t.title<<endl;
+           file2<<t.title<<endl<<endl;
         }
+        getline(file,extra);
         getline(file,t.name);
         len=(t.name).length();
         char b[len+1];
@@ -241,7 +243,7 @@ void updatetitle(string s)
            file2<<t.phone_no<<endl;
            file2<<t.email<<endl;
            file2<<t.dob<<endl;
-           file2<<t.title<<endl;
+           file2<<t.title<<endl<<endl;
        }
        else
        {
@@ -251,8 +253,9 @@ void updatetitle(string s)
            file2<<t.phone_no<<endl;
            file2<<t.email<<endl;
            file2<<t.dob<<endl;
-           file2<<t.title<<endl;
+           file2<<t.title<<endl<<endl;
        }
+       getline(file,extra);
        getline(file,t.name);
        len=(t.name).length();
        char b[len+1];
@@ -313,7 +316,7 @@ void updateemail(string s)
            file2<<t.phone_no<<endl;
            file2<<t.email<<endl;
            file2<<t.dob<<endl;
-           file2<<t.title<<endl;
+           file2<<t.title<<endl<<endl;
        }
        else
        {
@@ -323,8 +326,9 @@ void updateemail(string s)
            file2<<t.phone_no<<endl;
            file2<<t.email<<endl;
            file2<<t.dob<<endl;
-           file2<<t.title<<endl;
+           file2<<t.title<<endl<<endl;
        }
+       getline(file,extra);
        getline(file,t.name);
        len=(t.name).length();
        char b[len+1];
@@ -385,7 +389,7 @@ void updatedob(string s)
            file2<<t.phone_no<<endl;
            file2<<t.email<<endl;
            file2<<t.dob<<endl;
-           file2<<t.title<<endl;
+           file2<<t.title<<endl<<endl;
        }
        else
        {
@@ -395,8 +399,9 @@ void updatedob(string s)
            file2<<t.phone_no<<endl;
            file2<<t.email<<endl;
            file2<<t.dob<<endl;
-           file2<<t.title<<endl;
+           file2<<t.title<<endl<<endl;
        }
+       getline(file,extra);
        getline(file,t.name);
        len=(t.name).length();
        char b[len+1];
@@ -460,13 +465,14 @@ void remove_contact()
            file2<<t.phone_no<<endl;
            file2<<t.email<<endl;
            file2<<t.dob<<endl;
-           file2<<t.title<<endl;
+           file2<<t.title<<endl<<endl;
        }
        else
        {
            flag=1;
            cout<<endl<<"Record deleted"<<endl;
        }
+       getline(file,extra);
        getline(file,t.name);
        len=(t.name).length();
        char b[len+1];
@@ -597,6 +603,7 @@ int exists(string s)
            cout<<endl<<"Name: "<<t.name<<endl<<"Phone number: "<<t.phone_no<<endl<<"Email: "<<t.email<<endl<<"DOB: "<<t.dob<<endl<<"Title: "<<t.title<<endl<<endl;
            return 1;
        }
+       getline(file,extra);
        getline(file,t.name);
        len=(t.name).length();
        char b[len+1];
@@ -668,6 +675,7 @@ void findinlist()
                 cout<<endl<<"Name "<<t.name<<endl<<"Phone number "<<t.phone_no<<endl<<"Email "<<t.email<<endl<<"DOB "<<t.dob<<endl<<"Title "<<t.title<<endl<<endl;
                 return;
             }
+            getline(file,extra);
             getline(file,t.name);
             len=(t.name).length();
             char c[len+1];
@@ -724,6 +732,7 @@ void findinlist()
                 flag=1;
                 cout<<endl<<"Name: "<<t.name<<endl<<"Phone number: "<<t.phone_no<<endl<<"Email: "<<t.email<<endl<<"DOB: "<<t.dob<<endl<<"Title: "<<t.title<<endl<<endl;
             }
+            getline(file,extra);
             getline(file,t.name);
             getline(file,t.phone_no);
             getline(file,t.email);
@@ -805,7 +814,7 @@ void add()
     file<<p.dob<<endl;
     cout<<"Enter Title ";
     getline(cin>>ws,p.title);
-    file<<p.title<<endl;
+    file<<p.title<<endl<<endl;
     file.close();
 }
 
