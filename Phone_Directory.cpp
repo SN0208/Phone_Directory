@@ -84,7 +84,12 @@ void updatename(string s)
            {
                cout<<"The name already exists.To update again press 1 else press 0"<<endl;
                cin>>c;
-               if(c)
+               while(c!=1 && c!=0)
+               {
+                   cout<<"PLEASE ENTER CORRECT NUMBER "<<endl;
+                   cin>>c;
+               }
+               if(c==1)
                {
                    cout<<"Enter the new name ";
                    getline(cin>>ws,t.name);
@@ -98,7 +103,7 @@ void updatename(string s)
                    y=c;
                    check=exists(y);
                }
-               else
+               else if(c==0)
                {
                    return ;
                }
@@ -523,7 +528,12 @@ void update()
     {
         cout<<"No such contact exists.To update another contact press 1 else press 0"<<endl;
         cin>>c;
-        if(c)
+        while(c!=1 && c!=0)
+        {
+            cout<<"PLEASE ENTER CORRECT NUMBER "<<endl;
+            cin>>c;
+        }
+        if(c==1)
         {
             cout<<"Enter the name of the contact to be updated ";
             getline(cin>>ws,t.name);
@@ -537,7 +547,7 @@ void update()
             y=b;
             check=exists(y);
         }
-        else
+        else if(c==0)
         {
             return;
         }
@@ -545,6 +555,11 @@ void update()
     file.close();
     cout<<endl<<" Select the category to be updated "<<endl<<"* Press 1 for name"<<endl<<"* Press 2 for contact number"<<endl<<"* Press 3 for email"<<endl<<"* Press 4 for DOB"<<endl<<"* Press 5 for Title"<<endl<<endl;
     cin>>c;
+    while(c!=1 && c!=2 && c!=3 && c!=4 && c!=5)
+    {
+        cout<<"PLEASE ENTER CORRECT NUMBER "<<endl;
+        cin>>c;
+    }
     switch (c)
     {
         case 1: updatename(t.name);
@@ -638,6 +653,11 @@ void findinlist()
     cout<<"To search using Title press 1 , to search using Name press 0"<<endl;
     int s;
     cin>>s;
+    while(s!=0 && s!=1)
+    {
+      cout<<"PLEASE ENTER CORRECT NUMBER "<<endl;
+       cin>>s;
+    }
     if(s==0)
     {
         cout<<"Enter the name of contact to be searched :"<<endl;
@@ -782,6 +802,11 @@ void add()
     {
         cout<<"There's already a contact with this name.To make a new contact enter 1 else enter 0"<<endl;
         cin>>t;
+        while(t!=1 && t!=0)
+        {
+            cout<<"PLEASE ENTER CORRECT NUMBER "<<endl;
+            cin>>t;
+        }
         if(t)
         {
             cout<<"Enter the new name "<<endl;
@@ -833,6 +858,11 @@ int main()
    cout<<"Press 3 to search a contact"<<endl;
    cout<<"Press 4 to update a contact"<<endl;
    cin>>a;
+   while(a!=1 && a!=2  && a!=3 && a!=4 )
+   {
+       cout<<"PLEASE ENTER CORRECT NUMBER "<<endl;
+       cin>>a;
+   }
    switch (a)
    {
    case 1: add();
@@ -847,5 +877,10 @@ int main()
    cout<<endl<<"**************************************************************************************************************"<<endl<<endl;
    cout<<"TO PERFORM FURTHER OPERATIONS PRESS '1' ELSE PRESS '0' "<<endl;
    cin>>m;
+   while(m!=1 && m!=0)
+   {
+       cout<<"PLEASE ENTER CORRECT NUMBER "<<endl;
+       cin>>m;
+   }
    }
 }
